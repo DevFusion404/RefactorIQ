@@ -4,10 +4,7 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { 
   CheckCircle, 
   AlertTriangle, 
-  ShieldCheck, 
-  Activity, 
-  Copy, 
-  Check 
+  ShieldCheck 
 } from 'lucide-react'
 
 const EXAMPLES = [
@@ -106,32 +103,23 @@ def calculate_risk_quotient(
 
 export default function CodeDiffPreview() {
   const [activeTab, setActiveTab] = useState(0)
-  const [copied, setCopied] = useState(false)
-
   const active = EXAMPLES[activeTab]
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(active.after)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
-  }
-
   return (
-    <section className="py-24 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 relative overflow-hidden">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-mono font-semibold bg-violet-500/10 text-violet-600 dark:text-violet-400 border border-violet-500/20">
-            <Activity className="w-3.5 h-3.5" />
-            <span>Real-World Transformation Engine</span>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
+          <span className="text-xs font-mono font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
+            Automated Transformation
+          </span>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            See the Multi-Agent Engine in Action.
+            See the Multi-Agent Engine in Action
           </h2>
 
-          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base">
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base font-normal">
             From tangled legacy spaghetti code to clean, modular, and mathematically verified architecture.
           </p>
         </div>
@@ -144,8 +132,8 @@ export default function CodeDiffPreview() {
               onClick={() => setActiveTab(i)}
               className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-mono font-medium transition-all ${
                 activeTab === i
-                  ? 'bg-gradient-to-r from-cyan-600 to-indigo-600 text-white shadow-lg shadow-cyan-500/20'
-                  : 'glass-panel text-slate-600 dark:text-slate-300 hover:text-cyan-500 dark:hover:text-cyan-400'
+                  ? 'bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-md'
+                  : 'glass-panel text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white'
               }`}
             >
               {ex.title}
@@ -163,18 +151,10 @@ export default function CodeDiffPreview() {
                 <AlertTriangle className="w-3.5 h-3.5" />
                 {active.smell}
               </span>
-              <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
-                Category: <strong className="text-slate-700 dark:text-slate-200">{active.category}</strong>
+              <span className="text-xs font-mono text-slate-600 dark:text-slate-400">
+                Category: <strong className="text-slate-900 dark:text-slate-200">{active.category}</strong>
               </span>
             </div>
-
-            <button
-              onClick={handleCopy}
-              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg glass-pill text-xs font-mono text-slate-700 dark:text-slate-200 hover:text-cyan-500 transition"
-            >
-              {copied ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
-              <span>{copied ? 'Copied Refactored Code' : 'Copy Clean Code'}</span>
-            </button>
           </div>
 
           {/* Dual Code Panel Grid */}
@@ -223,27 +203,30 @@ export default function CodeDiffPreview() {
           </div>
 
           {/* Invariant Mining Telemetry Banner */}
-          <div className="mt-6 p-4 rounded-2xl bg-cyan-950/20 dark:bg-cyan-950/40 border border-cyan-500/30 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-xl bg-cyan-500/20 text-cyan-400">
+          <div className="mt-6 p-5 sm:p-6 rounded-2xl bg-slate-100 dark:bg-slate-900/90 border border-slate-300 dark:border-white/15 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 shadow-sm">
+            <div className="flex items-center gap-3.5">
+              <div className="p-3 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-950 shrink-0 shadow-sm">
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-xs font-mono uppercase font-bold text-cyan-300">
+                <h4 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white">
                   Behavioral Fingerprinting & Invariant Mining Verification
                 </h4>
-                <p className="text-xs text-slate-400">
+                <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-0.5">
                   Automated delta verification guaranteed identical semantic execution with zero unit tests required.
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-3 w-full lg:w-auto">
               {active.invariants.map((inv, idx) => (
-                <div key={idx} className="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-white/10 text-[11px] font-mono flex items-center gap-2">
-                  <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="text-slate-300">{inv.rule}:</span>
-                  <span className="font-bold text-cyan-300">{inv.score}</span>
+                <div 
+                  key={idx} 
+                  className="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-300 dark:border-white/15 text-xs sm:text-sm font-medium text-slate-800 dark:text-slate-200 flex items-center gap-2 shadow-xs"
+                >
+                  <CheckCircle className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                  <span>{inv.rule}:</span>
+                  <span className="font-extrabold text-slate-950 dark:text-white ml-0.5">{inv.score}</span>
                 </div>
               ))}
             </div>

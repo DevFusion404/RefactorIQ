@@ -103,11 +103,11 @@ const RESEARCHERS = [
 export default function TeamPage() {
   return (
     <div className="pt-28 pb-20 space-y-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 space-y-20">
         
         {/* Header */}
         <div className="text-center max-w-4xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold bg-slate-100 dark:bg-white/10 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-white/20">
             <Users className="w-3.5 h-3.5" />
             <span>Research Group · SLIIT Faculty of Computing</span>
           </div>
@@ -124,7 +124,7 @@ export default function TeamPage() {
         {/* Supervisors Section */}
         <div className="space-y-6">
           <div className="flex items-center gap-3 pb-2 border-b border-slate-200 dark:border-white/10">
-            <GraduationCap className="w-5 h-5 text-cyan-500" />
+            <GraduationCap className="w-5 h-5 text-slate-800 dark:text-slate-200" />
             <h2 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
               Academic Supervisors
             </h2>
@@ -143,14 +143,14 @@ export default function TeamPage() {
                       {sup.initials}
                     </div>
                   </div>
-                  <div className="absolute -bottom-1 -right-1 p-1 rounded-full bg-cyan-500 text-slate-950">
+                  <div className="absolute -bottom-1 -right-1 p-1 rounded-full bg-slate-800 text-white dark:bg-white dark:text-slate-900">
                     <Award className="w-3.5 h-3.5" />
                   </div>
                 </div>
 
                 {/* Details */}
                 <div className="space-y-2 text-center sm:text-left flex-1">
-                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400">
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-slate-800 dark:text-slate-200">
                     {sup.role}
                   </span>
                   <h3 className="text-xl font-extrabold text-slate-900 dark:text-white">
@@ -206,7 +206,7 @@ export default function TeamPage() {
                     </div>
 
                     <div className="text-right">
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-cyan-500/15 text-cyan-600 dark:text-cyan-300 border border-cyan-500/30">
+                      <span className="inline-block px-3 py-1 rounded-full text-xs font-mono font-bold bg-slate-100 dark:bg-white/10 text-slate-800 dark:text-slate-200 border border-slate-300 dark:border-white/20">
                         {mem.agent}
                       </span>
                       <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 mt-1 font-semibold">

@@ -14,7 +14,7 @@ const RESEARCH_PILLARS = [
     code: 'RP-01',
     agent: 'CUQA Agent',
     title: 'AST & Control Flow Graph Machine-Readable Extraction',
-    researcher: 'Imal Ayodya (Team Leader · IT22124180)',
+    researcher: 'Imal Ayodya (Team Leader)',
     gap: 'Traditional static analyzers (SonarQube) yield human dashboards, not machine-interpretable AST schemas required for automated AI pipeline agents.',
     solution: 'Tree-sitter parser parses polyglot legacy repositories into structured JSON graph representations, combining cyclomatic metrics, coupling graphs, and smell severity rankings.'
   },
@@ -22,7 +22,7 @@ const RESEARCH_PILLARS = [
     code: 'RP-02',
     agent: 'RDP Agent',
     title: 'Hybrid Multi-Criteria Decision Analysis & Planning',
-    researcher: 'Sithmaka Nanayakkara (IT22103918)',
+    researcher: 'Sithmaka Nanayakkara',
     gap: 'Isolated refactorings trigger cascading conflicts and unpredictable regression chains when executed without global architectural awareness.',
     solution: 'A hybrid decision model fusing ML suitability scoring, rule-based heuristics, and Multi-Criteria Decision Analysis (MCDA) generates conflict-free DAG refactoring plans.'
   },
@@ -30,7 +30,7 @@ const RESEARCH_PILLARS = [
     code: 'RP-03',
     agent: 'SCTV Agent',
     title: 'Behavioral Fingerprinting & Invariant Mining (Testless Verification)',
-    researcher: 'Pasan Amarasinghe (IT22110848)',
+    researcher: 'Pasan Amarasinghe',
     gap: 'Legacy systems lack reliable test suites. Standard compilers and syntax checks cannot verify if runtime semantics were altered during refactoring.',
     solution: 'Novel dynamic invariant mining: executes target functions against synthetic input samplings to capture pre/post output, exception, and state stability fingerprints. If delta > 0, auto-rollback is triggered.'
   },
@@ -38,7 +38,7 @@ const RESEARCH_PILLARS = [
     code: 'RP-04',
     agent: 'DIWO Agent',
     title: 'Developer Interaction & Human-In-The-Loop Orchestration',
-    researcher: 'Malmi Bandara (IT22277886)',
+    researcher: 'Malmi Bandara',
     gap: 'Fully autonomous "black-box" AI tools suffer from low developer trust due to lack of transparency, lack of granular control, and invasive unapproved changes.',
     solution: 'A centralized multi-agent coordinator with VS Code IDE extensions, presenting visual AST diffs, impact metrics, and approval/rejection gates before git commits.'
   }
@@ -72,7 +72,7 @@ export default function ResearchPage() {
 
   return (
     <div className="pt-28 pb-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-8 lg:px-12 space-y-20">
         
         {/* Page Hero */}
         <div className="text-center max-w-4xl mx-auto space-y-4">
